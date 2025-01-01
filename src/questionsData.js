@@ -194,7 +194,6 @@ const questionsData = [
         options: [
           "Magnetband",
           "Lochkarte",
-          "Magnetband",
           "Keine der Möglichkeiten stimmt",
         ],
         answers: ["Hauptspeicher"], // Single-Choice
