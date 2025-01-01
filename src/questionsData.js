@@ -45,13 +45,13 @@ const questionsData = [
         "Die folgende Abbildung zeigt die Seitenrahmen eines Paging-Systems und die Referenz-Bits. Für die Verwaltung der Seiten wird die Seitenersetzungsstrategie Clock-Algorithmus verwendet. Der Zeiger zeigt auf die Seite 0 und dreht sich im Uhrzeigersinn.",
       options: ["0, 9, 5, 6", "0, 9, 5, 1", "9, 5, 0, 6", "0, 6, 9, 2"],
       answers: ["0, 9, 5, 6"], // Single-Choice
-      image: "./images/Clock6.jpg",
+      image: "images/Clock6.jpg",
     },
     {
       question: "Die folgende Abbildung zeigt die Seitenrahmen eines Paging-Systems und die Referenz-Bits. Für die Verwaltung der Seiten wird die Seitenersetzungsstrategie Clock-Algorithmus verwendet. Der Zeiger zeigt auf die Seite 0 und dreht sich im Uhrzeigersinn.",
         options: ["0, 9, 5, 1", "9, 5, 0, 6", "0, 6, 9, 2", "0, 6, 9, 12"],
         answers: ["0, 6, 9, 12"], // Single-Choice
-        image: "/images/Clock9.jpg",
+        image: "images/Clock9.jpg",
     },
     {
     question:
