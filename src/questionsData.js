@@ -40,6 +40,19 @@ const questionsData = [
         answers: ["top, ps"], // Single-Choice
         image: null,
       },
+      {
+        question: "Welche Programme dienen auf einem Linux-System zur Prozessverwaltung?",
+          options: [
+            "kill, top",
+            "ps, touch",
+            "run, touch",
+            "echo, kill",
+            "ps, procs",
+            "ps, quit",
+          ],
+          answers: ["kill, top"], // Single-Choice
+          image: null,
+        },
     {
       question:
         "Die folgende Abbildung zeigt die Seitenrahmen eines Paging-Systems und die Referenz-Bits. Für die Verwaltung der Seiten wird die Seitenersetzungsstrategie Clock-Algorithmus verwendet. Der Zeiger zeigt auf die Seite 0 und dreht sich im Uhrzeigersinn.",
@@ -190,10 +203,28 @@ const questionsData = [
         image: null,
       },
       {
+        question: "Welche der folgenden Aussagen treffen auf einen Zombie-Prozess zu? (3 richtige Antworten)",
+        options: [
+            "Zombies belegen einen Eintrag in der Prozesstabelle.",
+            "Der Elternprozess sollte eine Variante von wait(2) aufrufen, um Zombies zu verhindern.",
+            "Zombies belegen keinen Eintrag in der Prozesstabelle.",
+            "Ein Zombie entsteht, wenn ein Prozess sich beendet und der Elternprozess die Nachricht vom Tode des Kindprozesses nicht entgegennimmt.",
+            "Zombies sind beendete Prozesse, die sich aber selbst wieder starten.",
+            "Ein Zombie ist ein Prozess, dessen Elternprozess terminiert ist."
+        ],
+        answers: [
+          "Zombies belegen einen Eintrag in der Prozesstabelle.",
+          "Der Elternprozess sollte eine Variante von wait(2) aufrufen, um Zombies zu verhindern.",
+          "Ein Zombie entsteht, wenn ein Prozess sich beendet und der Elternprozess die Nachricht vom Tode des Kindprozesses nicht entgegennimmt.",
+        ], // Multiple-Choice
+        image: null,
+      },
+      {
         question: "Welches Speichermedium erlaubt einen wahlfreien Zugriff?",
         options: [
           "Magnetband",
           "Lochkarte",
+          "Hauptspeicher",
           "Keine der Möglichkeiten stimmt",
         ],
         answers: ["Hauptspeicher"], // Single-Choice
@@ -231,6 +262,220 @@ const questionsData = [
         ],
         answers: ["10 Bits, 8 kB"], // Single-Choice
         image: null,
+      },
+      {
+        question: "Eine Festplatte bietet 4096 Zylinder (0-4095), der Schreiblesekopf bewegt sich aufwärts und bearbeitet dann eine Anfrage an Zylinder 2342. Die Warteschlange mit Zugriffsanfragen enthält folgende Einträge: 23, 1000, 2300, 2800, 4000 Die Anfragen werden in folgender Reihenfolge bearbeitet: 2800, 4000, 2300, 1000, 23 Welcher Disk-Scheduling-Algorithmus wurde verwendet?",
+        options: [
+          "LOOK",
+          "C-LOOK",
+          "SCAN",
+          "C-SCAN",
+        ],
+        answers: ["LOOK"], // Single-Choice
+        image: null,
+      },
+      {
+        question: "Gegeben sei eine dynamische Speicherverwaltung mit folgenden Speicherblöcken: Folgende Speicherplatzanforderungen liegen vor: 50 kB, 350 kB, 20 kB und 70 kB. Welche Speicherlücken stehen zur Verfügung, nachdem alle Anfragen mit First-Fit Strategie abgearbeitet sind? Nach jeder erfolgreichen Speicherallokation wird der Verschnitt freigegeben.",
+        options: [
+          "10 - 4 - 150 - 50",
+          "50 - 130 -10 - 24",
+          "30 - 80 - 10 - 24 -70",
+          "60 - 70 - 50 - 24 - 10",
+        ],
+        answers: ["30 - 80 - 10 - 24 -70"], // Single-Choice
+        image: "images/first-fit.png",
+      },
+      {
+        question: "Gegeben sei eine dynamische Speicherverwaltung mit folgenden Speicherblöcken: Welche Speicherblöcke werden bei sukzessiver Speicherplatzanforderung von 10, 20, 60 und 40 KB mit Worst-Fit Strategie ausgewählt? Nach jeder erfolgreichen Speicherallokation wird der Verschnitt nicht freigegeben.",
+        options: [
+          "20 K - 30  K - 60 K - 50 K",
+          "130 K - 60  K - 80 K - 50 K",
+          "130 K - 60  K - 80 K - 112 K",
+          "130 K - 112  K - 80 K - 60 K",
+        ],
+        answers: ["130 K - 112  K - 80 K - 60 K"], // Single-Choice
+        image: "images/worst-fit.png",
+      },
+      {
+        question: "Wie nennt man die Technik, bei der das Betriebssystem eines Computers mehrere Programme gleichzeitig ausführt, bei der es zwischen ihnen hin- und herschaltet?",
+        options: [
+          "Multitasking",
+          "Paging",
+          "Multithreading",
+          "Partitionierung",
+        ],
+        answers: ["Multitasking"], // Single-Choice
+        image: null,
+      },
+      {
+        question: "In einer Multiprogramming-Umgebung:",
+        options: [
+          "befindet sich mehr als ein Prozess im Speicher.",
+          "müssen mehrere CPUs vorhanden sein.",
+          "führt der Prozessor mehr als einen Prozess zur gleichen Zeit aus.",
+          "werden die Programme von mehr als einer Person entwickelt.",
+        ],
+        answers: ["befindet sich mehr als ein Prozess im Speicher."], // Single-Choice
+        image: null,
+      },
+      {
+        question: "Sie haben eine Festplatte mit 10 TB zur Verfügung, die Sie mit FAT-Dateisystem formatieren und komplett nutzen wollen. Die Cluster-Größe beträgt 4 kB. Wie viele Bit pro FAT-Eintrag werden benötigt?",
+        options: [
+          "32 Bit",
+          "20 Bit",
+          "30 Bit",
+          "28 Bit",
+        ],
+        answers: ["32 Bit"], // Single-Choice
+        image: null,
+      },
+      {
+        question: "Eine Magnetfestplatte besitzt folgende Eigenschaften: Sektorgröße: 1024 Byte, Anzahl Spuren pro Oberfläche: 22222, Anzahl Sektoren pro Spur: 256, Anzahl Scheiben(Oberflächen): 16, Welche Kapazität hat die Festplatte?",
+        options: [
+          "93,21 GB (86,8 GiB)",
+          "11,55 GB (10,76 GiB)",
+          "436,7 GB (406,7 GiB)",
+          "1,90 GB (1,8 GiB)",
+        ],
+        answers: ["93,21 GB (86,8 GiB)"], // Single-Choice
+        image: null,
+      },
+      {
+        question: "Die Dateiberechtigung -w---x-wx die in einem oktalen Ausdruck dargestellt wird, lautet:",
+        options: [
+          "213",
+          "661",
+          "774",
+          "211",
+        ],
+        answers: ["213"], // Single-Choice
+        image: null,
+      },
+      {
+        question: "Sie haben eine Inode-Datenstruktur implementiert, die 12 direkte Einträge, einen einfach-indirekten und einen zweifach-indirekten Index bietet. Jeder Index ist so groß wie ein Datenblock, jeder Indexeintrag (Adresse) benötigt 8 Bytes. Wie groß kann eine Datei maximal werden, wenn ein Datenblock 4 kB gross ist?",
+        options: [
+          "1.050.672 kB",
+          "1.050.672 B",
+          "525336 kB",
+          "262.668 kB",
+        ],
+        answers: ["1.050.672 kB"], // Single-Choice
+        image: null,
+      },
+      {
+        question: "Welches sind die drei wichtigsten Prozesszustände?",
+        options: [
+          "rechnend, rechenbereit, blockiert",
+          "rechnend, rechenbereit, abgestürzt",
+          "bootend, rechnend, beendet",
+        ],
+        answers: ["rechnend, rechenbereit, blockiert"], // Single-Choice
+        image: null,
+      },
+      {
+        question: "Eine Festplatte dreht sich mit 17000 Umdrehungen pro Minute. Wie lautet die durchschnittliche Latenzzeit (Zeit bis zum Erreichen der gewünschten Position innerhalb des Zylinders)?",
+        options: [
+          "1,76 ms",
+          "10 ms",
+          "2 ms",
+          "3,7 ms",
+        ],
+        answers: ["1,76 ms"], // Single-Choice
+        image: null,
+      },
+      {
+        question: "Welche der folgenden Aussagen zur Multiprogramming with a fixed number of tasks (MFT) trifft zu?",
+        options: [
+            "Interne Fragmentierung ist ggf. groß",
+            "Es gibt keine externe Fragmentierung.",
+            "MFT ist geeignet für Systeme mit wenigen großen Prozessen.",
+            "Alle Partitionen müssen die gleiche Größe besitzen.",
+            "Um die interne Fragmentierung klein zu halten, wird die Strategie 'Worst Fit' verwendet.",
+            "Prozessgröße darf größer sein als die Partitionsgröße."
+        ],
+        answers: [
+          "Interne Fragmentierung ist ggf. groß",
+          "Es gibt keine externe Fragmentierung.",
+          "MFT ist geeignet für Systeme mit wenigen großen Prozessen.",
+        ], // Multiple-Choice
+        image: null,
+      },
+      {
+        question: "Welcher Speicher ist i.d.R. ein Bestandteil der CPU?",
+        options: [
+          "Register",
+          "Core Memory",
+          "Magnetspeicher",
+          "Keine der Möglichkeiten stimmt",
+        ],
+        answers: ["Register"], // Single-Choice
+        image: null,
+      },
+      {
+        question: "Das Kommando  'ls −l autoconf' zeigt Folgendes auf der Konsole: '-rwxr--r-- 1 user01 verwaltung 16704 Nov 22 17:13 autoconf' Wie kann der Benutzer user01 alle Leserechte entfernen?",
+        options: [
+          "chmod +x autoconf",
+          "sudo chmod 744 autoconf",
+          "chown g-x autoconf",
+          "chmod uog-r autoconf",
+        ],
+        answers: ["chmod uog-r autoconf"], // Single-Choice
+        image: null,
+      },
+      {
+        question: "In einer Hauptspeicherverwaltung mit fünfstufigem Paging verwendet die CPU 63 Bit für die logischen Adressen. Eine Seite ist 8 kB groß und für jeden Seitentabelleneintrag wird 8 Byte verwendet. Wie viele Bits werden für jede Stufe verwendet, wenn die Stufen die gleiche Anzahl von Bits verwenden? Wie groß ist eine Seitentabelle?",
+        options: [
+          "10 Bits, 8 kB",
+          "10 Bits, 4096 B",
+          "8 Bits, 4096 B",
+          "9 Bits, 2048 B",
+        ],
+        answers: ["10 Bits, 8 kB"], // Single-Choice
+        image: null,
+      },
+      {
+        question: "In einem einstufigen Paging-System mit TLB dauert ein Speicherzugriff 40 ns und der Zugriff auf den TLB 1 ns. Ab welcher Trefferrate führt der Einsatz des TLB zu verbesserten durchschnittlichen Zugriffszeiten?",
+        options: [
+          "2,5%",
+          "1%",
+          "2%",
+          "5%",
+        ],
+        answers: ["2,5%"], // Single-Choice
+        image: null,
+      },
+      {
+        question: "Gegeben ist ein dreistufiges Paging-System mit TLB. Wie lange dauert das Lesen eines Wertes aus dem Hauptspeicher, wenn der TLB einen Eintrag zum Haupspeicher enthält? Ein Speicherzugriff dauert 100 ns und ein TLB-Zugriff 2ns.",
+        options: [
+          "102 ns",
+          "302 ns",
+          "402 ns",
+          "400 ns",
+        ],
+        answers: ["102 ns"], // Single-Choice
+        image: null,
+      },
+      {
+        question: "In einer Hauptspeicherverwaltung mit mehrstufigem Paging verwendet die CPU 48 Bit für die logischen Adressen. Eine Seite ist 4 kB groß und für jeden Seitentabelleneintrag wird 8 Byte verwendet. Wie viele Stufen werden mindestens benötigt, wenn eine Seitetabelle maximal so groß wie eine Seite sein darf?",
+        options: [
+          "4 Stufen",
+          "3 Stufen",
+          "2 Stufen",
+          "5 Stufen",
+        ],
+        answers: ["4 Stufen"], // Single-Choice
+        image: null,
+      },
+      {
+        question: "Gegeben ist eine Inode-Datenstruktur mit 12 direkten Einträgen und einfach-, zweifach- und dreifachindirekten Indexblöcken. Ein Indexblock hat die Größe eines Datenblockes und kann 256 Adressen aufnehmen. Ein Datenblock ist 1 kB groß. Wieviele Festplattenzugriffe sind notwendig, um Byte 11 233 einer Datei zu lesen?",
+        options: [
+          "3",
+          "4",
+          "10",
+          "2",
+        ],
+        answers: ["2"], // Single-Choice
+        image: "images/inode.png",
       },
   ];
   
