@@ -120,6 +120,17 @@ const questionsData = [
         image: null,
       },
       {
+        question: "Welche Aussage zu Signalen trifft am besten zu?",
+        options: [
+          "Signale sind eine Form der Interprozesskommunikation (IPC). Das Programm kill bzw. die Funktion kill(2) kann benutzt werden, um Signale an Prozesse zu senden.",
+          "Das Programm kill bzw. die Funktion kill(2) kann nur zum Beenden vom Prozessen benutzt werden. Die Funktion signal(2) wird benutzt, um Interprozesskommunikation (IPC) mit Signalen zu implementieren.",
+          "Mit Signalen lassen sich Prozesse nur beenden, daher sind Signale zur Interprozesskommunikation (IPC) nur sehr eingeschränkt nutzbar.",
+          "Nur Prozesse, die mit root-Rechten laufen, dürfen Signale versenden, daher sind Signale zur Interprozesskommunikation (IPC) nur sehr eingeschränkt nutzbar.",
+        ],
+        answers: ["Signale sind eine Form der Interprozesskommunikation (IPC). Das Programm kill bzw. die Funktion kill(2) kann benutzt werden, um Signale an Prozesse zu senden."], // Single-Choice
+        image: null,
+      },
+      {
         question: "In einem Betriebssystem mit Paging stehen folgende Seiten in der Warteschlange und warten auf die Bearbeitung: 5, 0, 1, 3, 2, 0, 5, 2. Das System verfügt über drei Seitenrahmen, die mit den Seiten 0, 1 und 2 gefüllt sind. Wie viele Seitenfehler treten auf und welche Seiten sind im Speicher vorhanden, nachdem die Warteschlange vollständig abgearbeitet ist und wenn die Seitenersetzungsstrategie Optimal verwendet wird?",
         options: [
           "Ein Seitenfehler. Seiten 1, 3 und 5 sind im Speicher vorhanden.",
@@ -128,6 +139,28 @@ const questionsData = [
           "Zwei Seitenfehler. Seiten 1 und 5 sind im Speicher vorhanden.",
         ],
         answers: ["Drei Seitenfehler. Seiten 0, 2 und 5 sind im Speicher vorhanden."], // Single-Choice
+        image: null,
+      },
+      {
+        question: "In einem Betriebssystem mit Paging stehen folgende Seiten in der Warteschlange und warten auf die Bearbeitung: 2, 1, 3, 2, 1, 0, 2, 3. Das System verfügt über drei Seitenrahmen, die mit den Seiten 0, 1 und 2 gefüllt sind. Wie viele Seitenfehler treten auf und welche Seiten sind im Speicher vorhanden, nachdem die Warteschlange vollständig abgearbeitet ist und wenn die Seitenersetzungsstrategie Optimal verwendet wird?",
+        options: [
+          "Zwei Seitenfehler. Seiten 0, 2 und 3 sind im Speicher vorhanden.",
+          "Ein Seitenfehler. Seiten 0, 1 und 2 sind im Speicher vorhanden.",
+          "Drei Seitenfehler. Seiten 0, 2 und 4 sind im Speicher vorhanden.",
+          "Drei Seitenfehler. Seiten 0, 1 und 2 sind im Speicher vorhanden.",
+        ],
+        answers: ["Zwei Seitenfehler. Seiten 0, 2 und 3 sind im Speicher vorhanden."], // Single-Choice
+        image: null,
+      },
+      {
+        question: "In einem Betriebssystem mit Paging stehen folgende Seiten in der Warteschlange und warten auf die Bearbeitung: 1, 0, 2, 0, 1, 3, 1, 2, 3, 1. Das System verfügt über drei Seitenrahmen, die mit den Seiten 0, 1 und 2 gefüllt sind. Die Seiten sind zu den Zeiten 0, 1, und 2 eingefügt und die Zeiten der letzten Zugriffe lautet: 5, 3 und 7. Wie viele Seitenfehler treten auf, nachdem die Warteschlange vollständig abgearbeitet ist und wenn die Seitenersetzungsstrategie LRU verwendet wird?",
+        options: [
+          "2",
+          "3",
+          "5",
+          "4",
+        ],
+        answers: ["2"], // Single-Choice
         image: null,
       },
       {
@@ -476,6 +509,39 @@ const questionsData = [
         ],
         answers: ["2"], // Single-Choice
         image: "images/inode.png",
+      },
+      {
+        question: "Welches Speichermedium erlaubt einen wahlfreien Zugriff?",
+        options: [
+          "USB-Stick",
+          "Magnetband",
+          "Lochkarte",
+          "Keine der Möglichkeiten stimmt",
+        ],
+        answers: ["USB-Stick"], // Single-Choice
+        image: null,
+      },
+      {
+        question: "Ein Festplatte mit der Kapazität 20 GiB (21,47 GB) und einem Schreib-Lesekopf pro Scheibenoberfläche hat folgende Eigenschaften: - Sektorgröße: 1024 Byte - Anzahl Spuren pro Oberfläche: 1024 - Anzahl Sektoren pro Spur: 1024 Wieviele Schreib-Leseköpfe besitzt die Platte insgesamt?",
+        options: [
+          "10",
+          "2",
+          "20",
+          "100",
+        ],
+        answers: ["20"], // Single-Choice
+        image: null,
+      },
+      {
+        question: "In einem Betriebssystem mit Paging stehen zum Zeitpunkt t=10 folgende Seiten in der Warteschlange und warten auf die Bearbeitung: 0, 3, 2, 0, 1, 4, 1, 0, 1, 4 Das System verfügt über drei Seitenrahmen, die mit den Seiten 0, 1 und 2 gefüllt sind. Die Seiten sind zu den Zeiten 0, 1, und 2 eingefügt und die Zeiten der letzten Zugriffe lautet: 5, 3 und 7. Wie viele Seitenfehler treten auf, nachdem die Warteschlange vollständig abgearbeitet ist und wenn die Seitenersetzungsstrategie FIFO verwendet wird?",
+        options: [
+          "4",
+          "3",
+          "5",
+          "2",
+        ],
+        answers: ["4"], // Single-Choice
+        image: null,
       },
   ];
   
