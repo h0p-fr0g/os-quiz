@@ -67,6 +67,12 @@ const questionsData = [
         image: "images/Clock9.jpg",
     },
     {
+      question: "Die folgende Abbildung zeigt die Seitenrahmen eines Paging-Systems und die Referenz-Bits. Für die Verwaltung der Seiten wird die Seitenersetzungsstrategie Clock-Algorithmus verwendet. Der Zeiger zeigt auf die Seite 0 und dreht sich im Uhrzeigersinn.",
+        options: ["4, 5, 0, 6", "0, 6, 9, 12", "6, 9, 12, 2", "0, 4, 5, 1"],
+        answers: ["4, 5, 0, 6"], // Single-Choice
+        image: "images/Clock4506.jpg",
+    },
+    {
     question:
           "Was ist der Unterschied zwischen den Kommandos top und ps?",
         options: ["top liefert eine dynamische Echtzeitansicht der Prozesse eines Systems. ps zeigt eine Momentaufnahme der Prozesse.", "ps liefert eine dynamische Echtzeitansicht der Prozesse eines Systems. top zeigt eine Momentaufnahme der  Prozesse.", "top liefert eine Ansicht der Prozesse eines Systems. ps zeigt die Threads eines Systems.", "ps liefert eine Ansicht der Prozesse eines Systems. top zeigt  die Threads eines Systems."],
@@ -94,6 +100,23 @@ const questionsData = [
           "Dynamische Speicherrelocation erfolgt während der Ausführung des Programms.",
           "Für die Implementierung wird ein Basis- sowie ein Limitregister verwendet.",
           "Ansatz ist relativ langsam, da bei der Ausführung des Programms jede Adresse um den Inhalt des Basisregisters inkrementiert werden muss.",
+        ], // Multiple-Choice
+        image: null,
+      },
+      {
+        question: "Welche der folgenden Aussagen zur statischen Speicherrelocation trifft zu?",
+        options: [
+          "Statische Speicherrelocation eines Prozesses ist nur möglich, wenn die Größe seiner Datenstrukturen vor Beginn der Ausführung bekannt ist.",
+          "Statische Speicherrelocation erfolgt während der Ausführung des Programms.",
+          "Die Umrechnung der Adressen führt zum Schutz des Betriebssystem aber nicht zwischen den Prozessen.",
+          "Für die Implementierung wird ein Basis- sowie ein Limitregister verwendet.",
+          "Adresssprünge werden bei Laden des Programms an die physische Speicherstelle angepasst.",
+          "Ansatz ist relativ langsam, da jede adresse um den Inhalt des Basisregisters inkrementiert werden muss.",
+        ],
+        answers: [
+          "Statische Speicherrelocation eines Prozesses ist nur möglich, wenn die Größe seiner Datenstrukturen vor Beginn der Ausführung bekannt ist.",
+          "Die Umrechnung der Adressen führt zum Schutz des Betriebssystem aber nicht zwischen den Prozessen.",
+          "Adresssprünge werden bei Laden des Programms an die physische Speicherstelle angepasst.",
         ], // Multiple-Choice
         image: null,
       },
@@ -153,6 +176,17 @@ const questionsData = [
         image: null,
       },
       {
+        question: "In einem Betriebssystem mit Paging stehen folgende Seiten in der Warteschlange und warten auf die Bearbeitung: 3, 1, 0, 2, 1, 0, 2, 1. Das System verfügt über drei Seitenrahmen, die mit den Seiten 0, 1 und 2 gefüllt sind. Wie viele Seitenfehler treten auf und welche Seiten sind im Speicher vorhanden, nachdem die Warteschlange vollständig abgearbeitet ist und wenn die Seitenersetzungsstrategie Optimal verwendet wird?",
+        options: [
+          "Zwei Seitenfehler. Seiten 0, 1 und 2 sind im Speicher vorhanden.",
+          "Ein Seitenfehler. Seiten 0, 1 und 2 sind im Speicher vorhanden.",
+          "Zwei Seitenfehler. Seiten 1, 2 und 3 sind im Speicher vorhanden.",
+          "Drei Seitenfehler. Seiten 0, 1 und 2 sind im Speicher vorhanden.",
+        ],
+        answers: ["Zwei Seitenfehler. Seiten 0, 1 und 2 sind im Speicher vorhanden."], // Single-Choice
+        image: null,
+      },
+      {
         question: "In einem Betriebssystem mit Paging stehen folgende Seiten in der Warteschlange und warten auf die Bearbeitung: 1, 0, 2, 0, 1, 3, 1, 2, 3, 1. Das System verfügt über drei Seitenrahmen, die mit den Seiten 0, 1 und 2 gefüllt sind. Die Seiten sind zu den Zeiten 0, 1, und 2 eingefügt und die Zeiten der letzten Zugriffe lautet: 5, 3 und 7. Wie viele Seitenfehler treten auf, nachdem die Warteschlange vollständig abgearbeitet ist und wenn die Seitenersetzungsstrategie LRU verwendet wird?",
         options: [
           "2",
@@ -208,7 +242,29 @@ const questionsData = [
         image: "images/io_redir_3.jpg",
       },
       {
+        question: "Welchen Inhalt hat die Datei foo nach der Ausführung der folgenden Kommandos?",
+        options: [
+          "bar",
+          "foo",
+          "bar bar",
+          "foo bar",
+        ],
+        answers: ["foo"], // Single-Choice
+        image: "images/foobar.png",
+      },
+      {
         question: "Sie haben eine Festplatte mit 120 GB zur Verfügung, die Sie mit FAT-Dateisystem formatieren und komplett nutzen wollen. Die Cluster-Größe beträgt 4 kB. Wie viele Bit pro FAT-Eintrag werden benötigt?",
+        options: [
+          "20 Bit",
+          "25 Bit",
+          "32 Bit",
+          "15 Bit",
+        ],
+        answers: ["25 Bit"], // Single-Choice
+        image: null,
+      },
+      {
+        question: "Sie haben eine Festplatte mit 100 GB zur Verfügung, die Sie mit FAT-Dateisystem formatieren und komplett nutzen wollen. Die Cluster-Größe beträgt 4 kB. Wie viele Bit pro FAT-Eintrag werden benötigt?",
         options: [
           "20 Bit",
           "25 Bit",
@@ -308,6 +364,17 @@ const questionsData = [
         image: null,
       },
       {
+        question: "Eine Festplatte bietet 4096 Zylinder (0-4095), der Schreiblesekopf bewegt sich aufwärts und bearbeitet dann eine Anfrage an Zylinder 2342. Die Warteschlange mit Zugriffsanfragen enthält folgende Einträge: 23, 1000, 2300, 2800, 4000 Die Anfragen werden in folgender Reihenfolge bearbeitet: 2800, 4000, 23, 1000, 2300 Welcher Disk-Scheduling-Algorithmus wurde verwendet?",
+        options: [
+          "LOOK",
+          "C-LOOK",
+          "SCAN",
+          "C-SCAN",
+        ],
+        answers: ["C-LOOK"], // Single-Choice
+        image: null,
+      },
+      {
         question: "Gegeben sei eine dynamische Speicherverwaltung mit folgenden Speicherblöcken: Folgende Speicherplatzanforderungen liegen vor: 50 kB, 350 kB, 20 kB und 70 kB. Welche Speicherlücken stehen zur Verfügung, nachdem alle Anfragen mit First-Fit Strategie abgearbeitet sind? Nach jeder erfolgreichen Speicherallokation wird der Verschnitt freigegeben.",
         options: [
           "10 - 4 - 150 - 50",
@@ -328,6 +395,17 @@ const questionsData = [
         ],
         answers: ["130 K - 112  K - 80 K - 60 K"], // Single-Choice
         image: "images/worst-fit.png",
+      },
+      {
+        question: "Gegeben sei eine dynamische Speicherverwaltung mit folgenden Speicherblöcken: Welche Speicherblöcke werden bei sukzessiver Speicherplatzanforderung von 10, 20, 60 und 40 KB mit First-Fit Strategie ausgewählt? Nach jeder erfolgreichen Speicherallokation wird der Verschnitt nicht freigegeben.",
+        options: [
+          "130 K - 60  K - 80 K - 50 K",
+          "20 K - 30  K - 60 K - 50 K",
+          "130 K - 60  K - 80 K - 112 K",
+          "130 K - 112  K - 80 K - 60 K",
+        ],
+        answers: ["130 K - 60  K - 80 K - 50 K"], // Single-Choice
+        image: "images/FirstFit.jpg",
       },
       {
         question: "Wie nennt man die Technik, bei der das Betriebssystem eines Computers mehrere Programme gleichzeitig ausführt, bei der es zwischen ihnen hin- und herschaltet?",
@@ -374,6 +452,17 @@ const questionsData = [
         image: null,
       },
       {
+        question: "Eine Magnetfestplatte besitzt folgende Eigenschaften: Sektorgröße: 2048 Byte, Anzahl Spuren pro Oberfläche: 20000, Anzahl Sektoren pro Spur: 64, Anzahl Scheiben(Oberflächen): 32, Welche Kapazität hat die Festplatte?",
+        options: [
+          "83,78 GB (78,13 GiB)",
+          "11,55 GB (10,76 GiB)",
+          "436,7 GB (406,7 GiB)",
+          "1,90 GB (1,8 GiB)",
+        ],
+        answers: ["83,78 GB (78,13 GiB)"], // Single-Choice
+        image: null,
+      },
+      {
         question: "Die Dateiberechtigung -w---x-wx die in einem oktalen Ausdruck dargestellt wird, lautet:",
         options: [
           "213",
@@ -385,6 +474,17 @@ const questionsData = [
         image: null,
       },
       {
+        question: "Die Dateiberechtigung rwxr-x--x die in einem oktalen Ausdruck dargestellt wird, lautet:",
+        options: [
+          "751",
+          "661",
+          "774",
+          "711",
+        ],
+        answers: ["751"], // Single-Choice
+        image: null,
+      },
+      {
         question: "Sie haben eine Inode-Datenstruktur implementiert, die 12 direkte Einträge, einen einfach-indirekten und einen zweifach-indirekten Index bietet. Jeder Index ist so groß wie ein Datenblock, jeder Indexeintrag (Adresse) benötigt 8 Bytes. Wie groß kann eine Datei maximal werden, wenn ein Datenblock 4 kB gross ist?",
         options: [
           "1.050.672 kB",
@@ -393,6 +493,17 @@ const questionsData = [
           "262.668 kB",
         ],
         answers: ["1.050.672 kB"], // Single-Choice
+        image: null,
+      },
+      {
+        question: "Sie haben eine Inode-Datenstruktur implementiert, die 64 direkte Einträge, einen einfach-indirekten und einen zweifach-indirekten Index bietet. Jeder Index ist so groß wie ein Datenblock, jeder Indexeintrag (Adresse) benötigt 4 Bytes. Wie groß kann eine Datei maximal werden, wenn ein Datenblock 1 kB gross ist?",
+        options: [
+          "65.856 kB",
+          "525.440 B",
+          "131.712 kB",
+          "262.720 kB",
+        ],
+        answers: ["65.856 kB"], // Single-Choice
         image: null,
       },
       {
@@ -417,6 +528,17 @@ const questionsData = [
         image: null,
       },
       {
+        question: "Eine Festplatte dreht sich mit 7200 Umdrehungen pro Minute. Wie lautet die durchschnittliche Latenzzeit (Zeit bis zum Erreichen der gewünschten Position innerhalb des Zylinders)?",
+        options: [
+          "4,16 ms",
+          "8,33 ms",
+          "10 ms",
+          "3,7 ms",
+        ],
+        answers: ["4,16 ms"], // Single-Choice
+        image: null,
+      },
+      {
         question: "Welche der folgenden Aussagen zur Multiprogramming with a fixed number of tasks (MFT) trifft zu?",
         options: [
             "Interne Fragmentierung ist ggf. groß",
@@ -434,6 +556,23 @@ const questionsData = [
         image: null,
       },
       {
+        question: "Welche der folgenden Aussagen zur Multiprogramming with a variable number of tasks (MVT) trifft zu?",
+        options: [
+          "Es gibt keine interne Fragmentierung.",
+          "Hauptspeicher wird dynamisch und anhand der Größe des Prozesses partitioniert.",
+          "Defragmentierung (Memory Compaction) ist zeitaufwendig und wird nicht eingesetzt.",
+          "Für die interne Fragmentierung werden die Stratgien 'Best available fit' und 'Best fit only' eingesetzt.",
+          "MVT ist nur für Systeme mit wenigen großen Prozessen geeignet.",
+          "Alle Partitionen müssen die gleiche Größe besitzen."
+        ],
+        answers: [
+          "Es gibt keine interne Fragmentierung.",
+          "Hauptspeicher wird dynamisch und anhand der Größe des Prozesses partitioniert.",
+          "Defragmentierung (Memory Compaction) ist zeitaufwendig und wird nicht eingesetzt.",
+        ], // Multiple-Choice
+        image: null,
+      },
+      {
         question: "Welcher Speicher ist i.d.R. ein Bestandteil der CPU?",
         options: [
           "Register",
@@ -442,6 +581,17 @@ const questionsData = [
           "Keine der Möglichkeiten stimmt",
         ],
         answers: ["Register"], // Single-Choice
+        image: null,
+      },
+      {
+        question: "Welcher Speicher ist i.d.R. ein Bestandteil der CPU?",
+        options: [
+          "1. / 2. Level Cache",
+          "Hauptspeicher",
+          "Optischer Speicher",
+          "Keine der Möglichkeiten stimmt",
+        ],
+        answers: ["1. / 2. Level Cache"], // Single-Choice
         image: null,
       },
       {
@@ -467,6 +617,17 @@ const questionsData = [
         image: null,
       },
       {
+        question: "In einer Hauptspeicherverwaltung mit vierstufigem Paging verwendet die CPU 53 Bit für die logischen Adressen. Eine Seite ist 8 kB groß und für jeden Seitentabelleneintrag wird 8 Byte verwendet. Wie viele Bits werden für jede Stufe verwendet, wenn die Stufen die gleiche Anzahl von Bits verwenden? Wie groß ist eine Seitentabelle?",
+        options: [
+          "10 Bits, 8 kB",
+          "10 Bits, 4096 B",
+          "8 Bits, 4096 B",
+          "9 Bits, 8 kB",
+        ],
+        answers: ["10 Bits, 8 kB"], // Single-Choice
+        image: null,
+      },
+      {
         question: "In einem einstufigen Paging-System mit TLB dauert ein Speicherzugriff 40 ns und der Zugriff auf den TLB 1 ns. Ab welcher Trefferrate führt der Einsatz des TLB zu verbesserten durchschnittlichen Zugriffszeiten?",
         options: [
           "2,5%",
@@ -475,6 +636,17 @@ const questionsData = [
           "5%",
         ],
         answers: ["2,5%"], // Single-Choice
+        image: null,
+      },
+      {
+        question: "In einem dreistufigen Paging-System mit TLB dauert ein Speicherzugriff 20 ns und der Zugriff auf den TLB 1 ns. Bei welcher Trefferrate des TLB führt der Einsatz von TLB zur Halbierung der durchschnittlichen Zugriffszeiten auf die Seiten im Speicher?",
+        options: [
+          "68%",
+          "77,5%",
+          "50%",
+          "30%",
+        ],
+        answers: ["68%"], // Single-Choice
         image: null,
       },
       {
@@ -500,6 +672,17 @@ const questionsData = [
         image: null,
       },
       {
+        question: "In einer Hauptspeicherverwaltung mit mehrstufigem Paging verwendet die CPU 52 Bit für die logischen Adressen. Eine Seite ist 4 kB groß und für jeden Seitentabelleneintrag wird 8 Byte verwendet. Wie viele Stufen werden mindestens benötigt, wenn eine Seitetabelle maximal doppelt so groß wie eine Seite sein darf?",
+        options: [
+          "4 Stufen",
+          "3 Stufen",
+          "2 Stufen",
+          "5 Stufen",
+        ],
+        answers: ["4 Stufen"], // Single-Choice
+        image: null,
+      },
+      {
         question: "Gegeben ist eine Inode-Datenstruktur mit 12 direkten Einträgen und einfach-, zweifach- und dreifachindirekten Indexblöcken. Ein Indexblock hat die Größe eines Datenblockes und kann 256 Adressen aufnehmen. Ein Datenblock ist 1 kB groß. Wieviele Festplattenzugriffe sind notwendig, um Byte 11 233 einer Datei zu lesen?",
         options: [
           "3",
@@ -509,6 +692,17 @@ const questionsData = [
         ],
         answers: ["2"], // Single-Choice
         image: "images/inode.png",
+      },
+      {
+        question: "Gegeben ist eine Inode-Datenstruktur mit 12 direkten Einträgen und einfach-, zweifach- und dreifachindirekten Indexblöcken. Ein Indexblock hat die Größe eines Datenblockes und kann 256 Adressen aufnehmen. Ein Datenblock ist 1 kB groß. Wieviele Festplattenzugriffe sind notwendig, um Byte 250 000 einer Datei zu lesen?",
+        options: [
+          "3",
+          "4",
+          "6",
+          "8",
+        ],
+        answers: ["3"], // Single-Choice
+        image: "images/inode2.png",
       },
       {
         question: "Welches Speichermedium erlaubt einen wahlfreien Zugriff?",
@@ -533,6 +727,17 @@ const questionsData = [
         image: null,
       },
       {
+        question: "Ein Festplatte mit der Kapazität 10 GiB (10.73 GB) und einem Schreib-Lesekopf pro Scheibenoberfläche hat folgende Eigenschaften: - Sektorgröße: 1024 Byte - Anzahl Spuren pro Oberfläche: 1024 - Anzahl Sektoren pro Spur: 1024 Wieviele Schreib-Leseköpfe besitzt die Platte insgesamt?",
+        options: [
+          "10",
+          "1",
+          "20",
+          "100",
+        ],
+        answers: ["10"], // Single-Choice
+        image: null,
+      },
+      {
         question: "In einem Betriebssystem mit Paging stehen zum Zeitpunkt t=10 folgende Seiten in der Warteschlange und warten auf die Bearbeitung: 0, 3, 2, 0, 1, 4, 1, 0, 1, 4 Das System verfügt über drei Seitenrahmen, die mit den Seiten 0, 1 und 2 gefüllt sind. Die Seiten sind zu den Zeiten 0, 1, und 2 eingefügt und die Zeiten der letzten Zugriffe lautet: 5, 3 und 7. Wie viele Seitenfehler treten auf, nachdem die Warteschlange vollständig abgearbeitet ist und wenn die Seitenersetzungsstrategie FIFO verwendet wird?",
         options: [
           "4",
@@ -543,6 +748,82 @@ const questionsData = [
         answers: ["4"], // Single-Choice
         image: null,
       },
+      {
+        question: "In einem Betriebssystem mit Paging stehen zum Zeitpunkt t=10 folgende Seiten in der Warteschlange und warten auf die Bearbeitung: 0, 3, 2, 1, 4, 0, 2, 0, 2, 0 Das System verfügt über drei Seitenrahmen, die mit den Seiten 0, 1 und 2 gefüllt sind. Die Seiten sind zu den Zeiten 2, 0, und 1 Sekunden eingefügt und die Zeiten der letzten Zugriffe lautet: 5, 3 und 7 Sekunden. Wie viele Seitenfehler treten auf, nachdem die Warteschlange vollständig abgearbeitet ist und wenn die Seitenersetzungsstrategie FIFO verwendet wird?",
+        options: [
+          "6",
+          "3",
+          "5",
+          "4",
+        ],
+        answers: ["5"], // Single-Choice
+        image: null,
+      },
+      {
+        question: "In einem Betriebssystem mit Paging stehen zum Zeitpunkt t=10 folgende Seiten in der Warteschlange und warten auf die Bearbeitung: 2, 3, 1, 0, 3, 5, 1, 3, 5, 3 Das System verfügt über drei Seitenrahmen, die mit den Seiten 0, 1 und 2 gefüllt sind. Die Seiten sind zu den Zeiten 0, 1, und 2 Sekunden eingefügt und die Zeiten der letzten Zugriffe lautet: 5, 7 und 3. Wie viele Seitenfehler treten auf, nachdem die Warteschlange vollständig abgearbeitet ist und wenn die Seitenersetzungsstrategie LRU verwendet wird?",
+        options: [
+          "6",
+          "3",
+          "5",
+          "4",
+        ],
+        answers: ["4"], // Single-Choice
+        image: null,
+      },
+      {
+        question: "Der Benutzer user (user id 1000, group id 1000) führt folgendes Programm aus. Welche Ausgabe erzeugt das Programm? TATSÄCHLICH RICHTIGE ANTWORT UNBEKANNT!",
+        options: [
+          "uid: 1000 euid: 1000",
+          "uid: 0 euid: 0",
+          "uid: 1000 euid: 0",
+          "uid: 0 euid: 1000",
+        ],
+        answers: [
+          "uid: 0 euid: 0",
+          "uid: 1000 euid: 0",
+          "uid: 0 euid: 1000",
+        ],
+        image: "images/gottloses_program.png",
+      },
+      {
+        question: "Welches Kommando eignet sich am besten, um die zeitliche Entwicklung des Speicherverbrauchs von Prozessen zu beobachten?",
+        options: [
+          "top",
+          "ps --repeat",
+          "ps aux",
+          "ps -ax",
+        ],
+        answers: ["top"], // Single-Choice
+        image: null,
+      },
+      {
+        question: "Welches Code-Fragment erzeugt diesen Prozessbaum?",
+        options: [
+          "erstes",
+          "zweites",
+          "drittes",
+          "viertes",
+          "keines"
+        ],
+        answers: ["viertes"], // Single-Choice
+        image: "images/baum.png",
+      },
+      {
+        question: "Ordnen Sie die Speicherarten aufsteigend (größte Zugriffszeit zuerst) nach der durchschnittlichen Zugriffszeit.",
+        options: [
+          "Optische Laufwerke > Festplatte > Hauptspeicher > 2. Level Cache",
+          "Optische Laufwerke > Festplatte > 2. Level Cache > Hauptspeicher",
+          "Optische Laufwerke > Hauptspeicher > Festplatte > 2. Level Cache",
+          "Festplatte > Optische Laufwerke > 2. Level Cache > Hauptspeicher",
+          "Festplatte > Optische Laufwerke > Hauptspeicher > 2. Level Cache",
+          "Festplatte > Hauptspeicher > 2. Level Cache > Optische Laufwerke",
+          "Hauptspeicher > Optische Laufwerke > Festplatte > 2. Level Cache",
+          "Hauptspeicher > Festplatte > Optische Laufwerke > 2. Level Cache",
+          "2. Level Cache > Festplatte > Optische Laufwerke > Hauptspeicher",
+        ],
+        answers: ["Optische Laufwerke > Festplatte > Hauptspeicher > 2. Level Cache"], // Single-Choice
+        image: "images/baum.png",
+      }
   ];
   
   export default questionsData;
