@@ -20,8 +20,8 @@ Dieses Projekt ist ein interaktives Quiz, das speziell zur Prüfungsvorbereitung
 const questionsData = [
   {
     question: "Hier steht die Frage?",
-    options: ["Option 1", "Option 2", "Option 3", "Option 4"],
-    answers: ["Option 1"], // Richtige Antwort(en)
+    wrong_options: ["Falsch 1", "Falsch 2", "Falsch 3"], //Falsche Antworten
+    correct_options: ["Richtig 1"], // Richtige Antwort(en)
     image: null, // Optional: Pfad zu einem Bild
   },
 ];

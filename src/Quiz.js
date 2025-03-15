@@ -13,13 +13,13 @@ const Quiz = () => {
   useEffect(() => {
     const shuffledQuestions = [...questionsData].sort(() => Math.random() - 0.5);
     shuffledQuestions.forEach((question) => {
-      question.options = question.options.sort(() => Math.random() - 0.5);
+      question.all_options = question.correct_options.concat(question.wrong_options).sort(() => Math.random() - 0.5);
     });
     setQuestions(shuffledQuestions);
   }, []);
 
   const isMultipleChoice =
-    questions.length > 0 && questions[currentQuestion].answers.length > 1;
+    questions.length > 0 && questions[currentQuestion].correct_options.length > 1;
 
   const handleOptionToggle = (option) => {
     if (isMultipleChoice) {
@@ -38,7 +38,7 @@ const Quiz = () => {
   const handleSubmit = () => {
     setShowAnswers(true);
 
-    const correctAnswers = questions[currentQuestion].answers.sort();
+    const correctAnswers = questions[currentQuestion].correct_options.sort();
     const selectedSorted = selectedOptions.sort();
 
     const isCorrect =
@@ -113,7 +113,7 @@ const Quiz = () => {
               />
             )}
 
-            {questions[currentQuestion].options.map((option) => (
+            {questions[currentQuestion].all_options.map((option) => (
               <div key={option}>
                 <label
                   style={{
@@ -122,7 +122,7 @@ const Quiz = () => {
                     padding: "10px",
                     fontSize: "16px",
                     backgroundColor: showAnswers
-                      ? questions[currentQuestion].answers.includes(option)
+                      ? questions[currentQuestion].correct_options.includes(option)
                         ? "#4caf50"
                         : selectedOptions.includes(option)
                         ? "#f44336"
